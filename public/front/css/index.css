@@ -1,0 +1,145 @@
+
+.mt_10{
+    margin-top: 10px;
+}
+.container {
+    min-width: 320px;
+    max-width: 640px;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+.myzuber_head {
+    height: 30px;
+    width: 100%;
+    background-color: pink;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.myzuber_head ul {
+    height: 100%;
+    width: 100%;
+}
+.myzuber_head ul li a{
+
+    display: block;
+    float: left;
+    width: 25%;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    font-size: 14px;
+}
+.myzuber_content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.myzuber_foot {
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+}
+.myzuber_foot ul{
+    border-top: 1px grey solid;
+}
+.myzuber_foot li{
+    height: 50px;
+    float: left;
+    width: 33.33%;
+    text-align: center;
+}
+.myzuber_foot li a{
+    display: block;
+    margin-top: 5px;
+}
+.myzuber_foot li a.current{
+  color: green;
+}
+
+/* 房屋详情展示 */
+.houseDetails  {
+   height: 120px;
+   width: 100%;
+   padding: 5px 5px;
+}
+.houseDetails li{
+    
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid grey;
+}
+.houseDetails li a{
+    display: block;
+}
+.houseDetails li .left{
+    height: 100%;
+    width: 40%;
+  
+}
+.houseDetails li .left img{
+    width: 100%;
+    height: 100%;
+}
+.houseDetails li .right {
+    margin-left: 10px;
+}
+
+
+.hiddenArea{
+   
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: yellow;
+    width: 100%;
+    height: 400px;
+
+}
+
+
+.hiddenArea{
+    padding: 10px;
+}
+.hiddenArea .content .sex {
+    margin-top: 10px;
+}
+
+/* 确认按钮样式 */
+.type_btns {
+    margin-top: 30px;
+}
+.type_btns div{
+    float: left;
+}
+.type_btns .clear_btn{
+    width: 35%;
+    background-color: #f3f4f5;
+    font-size: 15px;
+    line-height: 40px;
+    text-align: center;
+    color: #999;
+    margin-right:5%;
+}
+.type_btns .enter_btn {
+    width: 60%;
+    background-color: #66d4c3;
+    font-size: 15px;
+    line-height: 40px;
+    text-align: center;
+}
+.button-active {
+  border: 1px solid #66d4c3;
+  background-color: #f0fffd;
+  
+}

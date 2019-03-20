@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Myzuber</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./lib/fa/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="myzuber_head">
+            <ul>
+                <li>
+                    <a href="search.html">
+                        <span id="location">位置搜索</span>
+                        <i class="fa fa-search"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>户型</span>
+                        <i></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" id="showArea">
+                        <span>筛选</span>
+                        <i></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>有无视频</span>
+                        <i></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="myzuber_content">
+                <div class="hiddenArea" style="display:none" >
+               <div class="content mt_10">
+                   <div class="sex mt_10">性别限制</div>
+                   <span class="button-active">male</span> <span>female</span>
+                    <div class="feature mt_10">房源特色
+                    </div>
+                    <div >
+                        <span class="button-active">shortRent</span>
+                        <span>bashroom</span>
+                    </div>
+                    <div class="type mt_10">
+                        房源类型
+                    </div>
+                    <div>
+                            <span>shareHouse</span>
+                            <span>sublet</span>
+                            <span>ownerRent</span>
+                            <span>longtermRent</span>
+                    </div>
+               </div>  
+              <div class="btn">
+                <div class="type_btns">
+                    <div class="clear_btn">清除</div>
+                    <div class="enter_btn">确定</div>
+                </div>
+              </div>
+               </div>
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <ul class="mui-table-view">
+                        <!-- 坑 -->
+                        <!-- modal -->
+
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="myzuber_foot">
+            <ul>
+                <li>
+                    <a href="index.html" class="current">
+                        <i class="fa fa-home"></i>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="message.html">
+                        <i class="fa fa-envelope-o"></i>
+                        <p>消息</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <i class="fa fa-user"></i>
+                        <p>我</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+</body>
+
+<script type="text/html" id="ulTpl">
+{{each result v i}}
+
+<li class="mui-table-view-cell mui-media" data-id = "{{v._id}}">
+    <a href="productDetails.html?id={{v._id}}">
+        <img class="mui-media-object mui-pull-left" src="./images/mmexport1535437448344.jpg">
+        <div class="mui-media-body">
+            <p> {{v.proName}}</p>
+            <p class="mui-ellipsis">{{v.address}}</p>
+            <span>{{v.rentPrice}}</span>
+        </div>
+    </a>
+</li>
+{{/each}}
+
+</script>
+
+
+<script src="./lib/mui/js/mui.min.js"></script>
+<script src="./lib/zepto/zepto.min.js"></script>
+<script src="./lib/jquery-1.12.4.min.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/index.js"></script>
+
+</html>
