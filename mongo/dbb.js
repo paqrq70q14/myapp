@@ -4,15 +4,15 @@ const mongoClient = require('mongodb').MongoClient;
 const ObjectId = require('mongodb').ObjectId;
 const constr = 'mongodb://47.102.194.63:27017';
 const objectId = require('mongodb').ObjectId;
-let multipart = require('connect-multiparty');
-let multipartMiddleware = multipart();
+// let multipart = require('connect-multiparty');
+// let multipartMiddleware = multipart();
 
 
  module.exports = {
     // 查询用户方法
     queryUser(username, callback){
         mongoClient.connect(constr, function(err, client) {
-            let db = client.db('bbb');
+            let db = client.db('rent');
             // 获取集合对象
             let users = db.collection('bbb'); 
             users.find({"name":username}).toArray(function(err, data){
@@ -35,7 +35,7 @@ let multipartMiddleware = multipart();
     // 查询房屋总数量方法
     queryProductCount(callback){
         mongoClient.connect(constr, function(err,client){
-            let db = client.db('product');
+            let db = client.db('rent');
             // 获取房屋集合对象
             let products = db.collection('product');
             products.find({}).toArray(function(err, data){
@@ -53,7 +53,7 @@ let multipartMiddleware = multipart();
     // 根据id查询房屋
     queryProductById(id, callback){
         mongoClient.connect(constr, function(err, client){
-            let db = client.db('product');
+            let db = client.db('rent');
             let products = db.collection('product');
             products.find({_id: ObjectId(id)}).toArray(function(err, data){
                 callback(data[0]);
@@ -63,7 +63,7 @@ let multipartMiddleware = multipart();
     // 查询拼接字符串房屋方法
     queryProductDetailsByparams(str,callback){
         mongoClient.connect(constr,function(err, client){
-            let db = client.db('product');
+            let db = client.db('rent');
             let products = db.collection('product');
             console.log('查询的str=',str);
             products.find(str).toArray(function(err, data){
@@ -98,7 +98,7 @@ let multipartMiddleware = multipart();
     // 添加房屋信息功能
    queryProductDetails(params,callback){
         mongoClient.connect(constr, function(err, client){
-            let db = client.db('product');
+            let db = client.db('rent');
             let products = db.collection('product');
             
             products.find({proName:params}).toArray(function(err, data){
@@ -115,7 +115,7 @@ let multipartMiddleware = multipart();
       },
    addProduct(pro,callback){
         mongoClient.connect(constr, function(err, client){
-           let db = client.db('product');
+           let db = client.db('rent');
            let products = db.collection('product');
            products.insertOne({"proName":pro.proName,"proDesc":pro.proDesc,
                                 "address":pro.address,"rentPrice":pro.rentPrice},

@@ -4,8 +4,7 @@ const bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 const session = require('express-session');
 const logger = require('morgan');
-let multipart = require('connect-multiparty');
-let multipartMiddleware = multipart();
+
 
 let employee = require('./routes/employee');
 let product = require('./routes/product');
@@ -21,7 +20,7 @@ app.use(session({
     saveUninitialized: true
 }));
 
-app.use(multipart({uploadDir:'./public' }));
+
 app.use(function (req, res, next){
     let url = req.originalUrl;
     // 如果用户没有携带sessionId 则跳转回login.html
