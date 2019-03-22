@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Page = require('../models/page.js');
 const Product = require('../models/product');
-let multipart = require('connect-multiparty');
-let multipartMiddleware = multipart();
 
 //获取筛选房屋结果
 router.get('/housedetail', function (req, res) {
