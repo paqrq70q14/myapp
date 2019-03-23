@@ -24,7 +24,7 @@ module.exports = {
       ref  : 'origin/master',
       repo : 'git@github.com:paqrq70q14/myapp.git',
       path : '/usr/local/nginx/html',
-      'post-deploy' : 'git pull && npm install && pm2 reload ecosystem.config.js --env production'
+      'post-deploy' : 'npm install && git pull origin master && pm2 reload ecosystem.config.js --env production'
     }
   }
 };
