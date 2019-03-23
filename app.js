@@ -10,7 +10,18 @@ let employee = require('./routes/employee');
 let product = require('./routes/product');
 
 let app = express();
+const http = require('http');
 
+var port = "3307";
+
+// Create Server
+var server = http.createServer(app);
+
+// Listen 
+server.listen(port, function(err){
+    console.log("http://localhost:3307");
+   
+});
 // 配置session 
 app.use(session({
     secret: 'myRent-secret',
@@ -56,4 +67,4 @@ app.use('/employee', employee);
 
 
 
-module.exports = app;
+
