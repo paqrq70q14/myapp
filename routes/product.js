@@ -2,10 +2,12 @@ const express = require('express');
 const router = express.Router();
 const Page = require('../models/page.js');
 const Product = require('../models/product');
+const multiparty = require('multiparty')
+const db= require('../mongo/dbb.js');
 
-//获取筛选房屋结果
+//获取筛选房屋接口
 router.get('/housedetail', function (req, res) {
-
+     console.log(123);
     let params = {
         male: req.query.male || '0',
         female: req.query.female || '0',
@@ -36,64 +38,56 @@ router.get('/housedetail', function (req, res) {
         let result = data;
         console.log('result=',result);
         page.result = result;
-        res.send(page);
+       
 
     })
-       
-    // res.send("success");
+    res.send(page);   
+
 })
 
 
-router.get("/queryProductDetailsList", function (req, res) {
+
+// 查询所有房屋(back/product.html && )
+router.get("/queryAllProducts", function (req, res) {
     // 创建Product实例
-    let key = req.query.key;
-    let reg = new RegExp(key);
-    console.log('reg为', reg);
+    // let key = req.query.key || '';
+    // let reg = new RegExp(key);
+    // console.log('reg为', reg);
     // page实例
     let page = new Page({
         page: req.query.page ? parseInt(req.query.page) : 0,
         size: req.query.pageSize ? parseInt(req.query.pageSize) : 10,
     })
+    let pro = {
+        
+    }
+   // 查询所有房屋
+    // Product.queryAllProducts(pro,function (err, data) {
+    //     // if(err) return res.send({"error":403, "message":"数据库异常 !"});
+    //     console.log("后台");
+    //     let result = data;
+    //     page.result = result;
 
-    Product.queryProductDetail(reg, function (err, data) {
-        // if(err) return res.send({"error":403, "message":"数据库异常 !"});
-        console.log("后台");
+    //     // 查询房屋总数量方法
+    //     Product.queryProductCountAll(function (result) {
+    //         // if (err) return res.send({"error": 403, "message": "数据库异常！"});
+    //         // 总数 
+    //         page.total = result;
+    //         // 每条
+    //         page.rows = result;
+    //         res.send(page);
+    //     })
+    // })
+    db.queryAllProducts(pro, function(err, data){
         let result = data;
         page.result = result;
-
-        // 查询房屋总数量方法
-        Product.queryProductCountAll(function (result) {
-            // if (err) return res.send({"error": 403, "message": "数据库异常！"});
-            // 总数 
-            page.total = result;
-            // 每条
-            page.rows = result;
-            res.send(page);
-        })
+        page.total = data.length;
+        res.send(page);
     })
-
 
 
 })
 
-
-router.post("/addProducts", function (req, res) {
-    // 创建实例 
-    console.log(111);
-    let pro = new Product({
-        proName: req.body.proName || '',
-        proDesc: req.body.proDesc || '',
-        address: req.body.address || '',
-        rentPrice: req.body.rentPrice || ''
-
-    })
-    Product.addProduct(pro, function (err, result) {
-        if (err) {
-            return res.send({ "error": 403, "message": "数据库异常" })
-        }
-        res.send({ "success": true });
-    })
-})
 
 router.get("/queryProductById", function (req, res) {
     let id = req.query.id

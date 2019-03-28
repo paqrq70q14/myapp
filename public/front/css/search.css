@@ -7,6 +7,21 @@
     padding: 10px 10px 10px 0px;
     
 }
+.search-head {
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.search-head a {
+    display: block;
+    width: 32px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 22px;
+}
+.search-head .allArea {
+    color: #66d4c3;
+}
 .search-input{
     color: #fff;
     background-color: #D3D3D3;
@@ -40,7 +55,10 @@
     margin-top: 30px;
     height: 120px;
 }
-.search-by-line ul{
+.search-by-line .content {
+    margin-top:10px;
+}
+/* .search-by-line ul{
     margin-top:8px;
 
 }
@@ -52,4 +70,15 @@
     margin-right: 3px;
     margin-bottom: 8px;
     text-align: center;
+} */
+.search-by-line .button-1{
+    width: 70px;
+    height: 30px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    color: #999;
+
 }

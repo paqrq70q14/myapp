@@ -9,5 +9,15 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "moment": "^2.24.0",
+    "mongodb": "^3.2.2",
+    "morgan": "^1.9.1",
+    "multiparty": "^4.2.1",
+    "util": "^0.11.1"
+  }
 }

@@ -16,7 +16,6 @@
 .myzuber_head {
     height: 30px;
     width: 100%;
-    background-color: pink;
     position: absolute;
     top: 0;
     left: 0;
@@ -96,25 +95,44 @@
 
 
 .hiddenArea{
-   
-    z-index: 3;
+    z-index: 999;
+    background-color:rgba(0,0,0, .5);
     position: absolute;
     top: 0;
     left: 0;
-    background-color: yellow;
     width: 100%;
+    height: 600px;
+
+}
+
+.hiddenArea .wrap-content {
+    background-color: #fff;
     height: 400px;
-
-}
-
-
-.hiddenArea{
     padding: 10px;
-}
-.hiddenArea .content .sex {
-    margin-top: 10px;
-}
 
+}
+.wrap-content span {
+    border: 1px solid #ccc;
+    color: #999;
+    border-radius: 3px;
+}
+/* 性别筛选 */
+.hiddenArea .sex {
+    color: #666;
+    font-size: 14px;
+    margin: 10px 0;
+}
+/* 房源特色 */
+.hiddenArea .feature {
+    color: #666;
+    font-size: 14px;
+    margin: 10px 0;
+}
+.hiddenArea .houseType {
+    color: #666;
+    font-size: 14px;
+    margin: 10px 0;  
+}
 /* 确认按钮样式 */
 .type_btns {
     margin-top: 30px;
@@ -141,5 +159,7 @@
 .button-active {
   border: 1px solid #66d4c3;
   background-color: #f0fffd;
-  
+  color: black;
+  border-radius: 3px;
+ 
 }

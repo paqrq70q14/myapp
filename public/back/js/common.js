@@ -67,19 +67,19 @@ $(function(){
     })
 
     // 5 ajax判断登录状态 -- 调用接口询问是否登录
-    if(location.href.indexOf('login.html') === -1){
-        $.ajax({
-            type:"get",
-            url:"/employee/checkuserLogin",
-            dataType:"json",
-            success: function(info){
-                console.log( info );
-                if(info.error == 400){
-                    location.href = "login.html";
-                }
-            }
-        })
-    }
+    // if(location.href.indexOf('login.html') === -1){
+    //     $.ajax({
+    //         type:"get",
+    //         url:"/employee/checkuserLogin",
+    //         dataType:"json",
+    //         success: function(info){
+    //             console.log( info );
+    //             if(info.error == 400){
+    //                 location.href = "login.html";
+    //             }
+    //         }
+    //     })
+    // }
 
     
 })

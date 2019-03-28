@@ -1,0 +1,12 @@
+
+
+
+.modal span {
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin-right: 5px;
+}
+.modal span.active {
+    border:1px solid #ccc;
+    color: #66d4c3;
+}

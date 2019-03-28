@@ -1,4 +1,4 @@
-// import { template } from "handlebars";
+
 
 
 $(function(){
@@ -18,7 +18,7 @@ $(function(){
   
           $.ajax({
           tpye:"get",
-          url:"/product/queryProductDetailsList",
+          url:"/product/queryAllProducts",
           data:{
             key: key || ''
           },
@@ -31,36 +31,33 @@ $(function(){
       })
       
     }
-
+   
     // 模态框弹出
     $('#showArea').click(function(){
        $('.hiddenArea').toggle();
     })                         
 
     // 绑定点击事件
-    $('.hiddenArea span').on('click', function(){
-      // 判断是否为单选
-      // if($(this) == $('.sex span')){
-      //   console.log(11);
-      // }
+    $('.wrap-content span').on('click', function(){
+       
       $(this).toggleClass('button-active');
 
     })
     // 筛选确认 发送ajax
     $('.enter_btn').click(function(){
        // 遍历spans 判断是否有高亮
-       let spans = $('.hiddenArea span');
+       let spans = $('.wrap-content span');
        let params = '';
        for(let i =0; i<spans.length; i++){
           if( $(spans[i]).hasClass('button-active') ) {
-            let txt = $(spans[i]).text();
-            params += txt +'=1' +'&';
+            let val = $(spans[i]).data('value');
+            params += val +'=1' +'&';
           }
        }
        console.log(params);
       $.ajax({
         type:'get',
-        url: '/product/housedetail',
+        url: '/product/housedetail', //筛选接口
         data: params,
         success: function( info ){
            console.log( info );
