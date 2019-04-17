@@ -23,7 +23,7 @@ module.exports = {
       host : '47.102.194.63',
       ref  : 'origin/master',
       repo : 'git@github.com:paqrq70q14/myapp.git',
-      path : '/usr/local/nginx/html',
+      path : '/usr/local/html',
       'post-deploy' : 'git pull && npm install && pm2 reload ecosystem.config.js --env production'
     }
   }

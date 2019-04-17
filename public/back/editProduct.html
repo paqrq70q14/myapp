@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>myZuber</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+    <!-- 侧边栏 -->
+    <div class="RS_aside">
+        <!-- 大标题 -->
+        <div class="brand">
+            <a href="#">用户管理</a>
+        </div>
+        <!-- 头像 -->
+        <div class="pic">
+            <img src="../images/dd.jpg" alt="">
+            <p>超级管理员</p>
+        </div>
+        <!-- 导航 -->
+        <div class="nav">
+            <ul>
+                <li><a href="user.html"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a></li>
+                <li><a href="product.html" class="current"><i class="glyphicon glyphicon-tags"></i><span>房屋管理</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 主体 -->
+    <div class="RS_main">
+        <!-- 头部 -->
+        <div class="topbar">
+            <a href="javascript:;" class="pull-left icon-menu">
+                <i class="glyphicon glyphicon-align-justify"></i>
+            </a>
+            <a href="javascript:;" class="pull-right icon-logout">
+                <i class="glyphicon glyphicon-log-out"></i>
+            </a>
+        </div>
+
+        <div class="container">
+            <!-- 面包屑导航 ---路径导航(bootstrap) -->
+            <ol class="breadcrumb">
+                <li><a href="index.html">管理系统</a></li>
+                <li class="active">编辑房屋</li>
+            </ol>
+
+            <!-- 容器 -->
+    <div class="RS_content">
+        <form action="/updateProduct" enctype="multipart/form-data" method="post" id="form">
+            <div class="panel panel-default col-md-12">
+                <div class="panel-heading">编辑房屋详情</div>
+                <div class="panel-body">
+                        <!-- 坑 -->
+                </div>
+            </div>
+    </form>
+
+            </div>
+
+        </div>
+    </div>
+
+<script type="text/html" id="editTpl">
+
+    <div class="form-content">
+        <ul>
+            <!-- 配置一个id隐藏域 -->
+             <input type="hidden" name='id' value="{{_id}}"> 
+            <li>  房屋名称: <input type="text" name="proName" value="{{proName}}"></li>  
+            <li>  房屋地址: <input type="text" name="address" value="{{address}}"></li>
+            <li>  房屋月租: <input type="text" name="rentPrice" value="{{rentPrice}}"></li>
+            <li>
+                房屋描述:
+                <textarea name="proDesc" cols="60" rows="8">{{proDesc}}</textarea>
+            </li> <br>    
+            <li><input type="file" name="pic" id="fileupload">
+                <img src="" alt="" id="fileImg" width="40px" height="40px">
+                <!-- <img src="" alt="" id="fileImg1" width="40px" height="40px"> -->
+            </li>
+        </ul>     
+        <!-- 租赁模式 -->
+
+        <div class="sex"> 
+            性别选择: &nbsp;
+            <label> <input type="radio" name="sex" value="male=1" >男</label>
+            <label> <input type="radio" name="sex" value="female=1">女</label>
+        </div> 
+        
+        <div class="houseFeature">
+            房源特色: &nbsp;
+            <label><input type="checkbox" name="houseFeature" value="shortRent=1">可短租</label>
+            <label><input type="checkbox" name="houseFeature" value="bathroom=1">独立卫生间</label>
+        </div>
+
+            <div class="houseType"> 
+            房源类型: &nbsp;     
+            <label><input type="checkbox" name="houseType" value="shareHouse=1">室友合租</label>
+            <label><input type="checkbox" name="houseType" value="sublet=1">转租房源</label>
+            <label><input type="checkbox" name="houseType" value="ownerRent=1">业主出租</label>
+            <label><input type="checkbox" name="houseType" value="longtermRent=1">长租房源</label>
+        
+        </div><br>
+            <button type="submit" class="btn btn-default">提交</button>
+        </div> 
+
+</script>
+</body>
+
+
+
+<script src="./lib/jquery-1.12.4.min.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="./lib/nprogress/nprogress.js"></script>
+<script src="./js/common.js"></script>
+<script src="./lib/template-web.js"></script>
+<script src="./js/addProduct"></script>
+<script src="./js/editProduct.js"></script>
+</html>

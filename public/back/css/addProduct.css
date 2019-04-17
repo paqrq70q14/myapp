@@ -1,0 +1,26 @@
+
+ul,ol {
+    margin: 0;
+    padding: 0;
+}
+
+#imgBox{
+    height: 75px;
+    width: 100%;
+}
+#imgBox img{
+    float: left;
+    height: 100%;
+    width: 75px;
+    margin-right: 5px;
+}
+.houseRoom input{
+    width: 25px;
+    padding: 0;
+    vertical-align: baseline
+}
+.houseRoom div {
+    float: left;
+    margin-right: 5px;
+}
+    

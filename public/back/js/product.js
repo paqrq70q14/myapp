@@ -11,7 +11,7 @@ $(function(){
         
         $.ajax({
             type:"get",
-            url:"/product/queryAllProducts",
+            url:"/queryProducts",
             data:{
                 page: currentPage,
                 pageSize: pageSize
@@ -32,7 +32,7 @@ $(function(){
                     
                     onPageClicked: function(a,b,c,page){
     
-                        //更新当前页(点击页码时调用--不会出现递归)
+                        // 更新当前页(点击页码时调用--不会出现递归)
                         currentPage = page;
                         render();
                     }
@@ -41,18 +41,24 @@ $(function(){
         })
     }
 
-
-    // 2 添加功能
-    $('#addBtn').click(function() {
-        //显示模态框
-     $('#addModal').modal('show');
-       // 给span注册点击事件
-       $('#addModal span').on('click', function(){
-           // 切换active类
-           $(this).toggleClass('active');           
-       }) 
-    })
-
+    // 2 删除功能
+      $('.table-tbody').on("click", '#del-btn', function(){
+         // 获取id
+        let id = $(this).data('id');
+        console.log(id);
+         // 发送ajax给删除接口
+         $.ajax({
+             type:'get',
+             url:'/delProduct',
+             data: {
+                 id:id
+             },
+             success: function(info) {
+                 console.log(info);
+                 render();
+             } 
+        })  
+      })
     })
 
     // 5 表单校验

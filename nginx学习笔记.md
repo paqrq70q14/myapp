@@ -26,3 +26,9 @@ http {
           
     }
 }
+
+
+
+### bootstrap笔记
+## 1 面板控件： panel
+## 2 控制按钮大小 btn btn-default , btn-danger  

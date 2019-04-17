@@ -11,14 +11,13 @@ $(function () {
         
         $.ajax({
             type:'get',
-            url:'/product/queryProductById',
+            url:'/queryProductById',
             data: {
                 id: id
             },
             success: function( info ){
                 console.log(info);
-                console.log( typeof(info) );
-                let htmlStr = template('tpl', info);
+                let htmlStr = template('tpl', info[0]);
                 $('.content').html(htmlStr);
             }
         })

@@ -1,5 +1,4 @@
 let db = require('../mongo/dbb');
-let moment = require('moment');
 
 // 
 function Product(pro) {
@@ -8,7 +7,7 @@ function Product(pro) {
     this.address = pro.address;
 
 }
-// var reg = new RegExp('池袋');
+
 
 // 查询房屋总条数
 Product.queryProductsAll = function(pro,callback) {
@@ -36,16 +35,7 @@ Product.queryProductByParams = function(str, callback){
     })        
     
 }
-// 根据id查询房屋
-Product.queryProductById = function(id, callback) {
-    db.queryProductById(id, function(err, data){
-        if(err) {
-            return callback(err);
-        }
-        let result = data;
-        return callback(result);
-    })
-}
+
 
 // 查询房屋细节
 Product.queryAllProducts = function(reg, callback) {

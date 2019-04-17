@@ -22,22 +22,13 @@
         </div>
         <!-- 头像 -->
         <div class="pic">
-            <!-- <img src="./images/dd.jpg" alt=""> -->
+            <img src="../images/dd.jpg" alt="">
             <p>超级管理员</p>
         </div>
         <!-- 导航 -->
         <div class="nav">
             <ul>
                 <li><a href="user.html"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a></li>
-                <li>
-                    <a href="javascript:;" class="category"><i
-                            class="glyphicon glyphicon-list"></i><span>分类管理</span></a>
-                    <!-- 二级分类菜单 -->
-                    <div class="child" style="display:none">
-                        <a href="first.html">一级分类</a>
-                        <a href="second.html">二级分类</a>
-                    </div>
-                </li>
                 <li><a href="product.html" class="current"><i class="glyphicon glyphicon-tags"></i><span>房屋管理</span></a>
                 </li>
             </ul>
@@ -58,155 +49,49 @@
             </a>
         </div>
 
-        <!-- 如果希望有一个容器可以撑满 -- container-fluid -->
-        <div class="container-fluid">
-            <!-- 面包屑导航 ---路径导航(bootstrap) -->
-            <ol class="breadcrumb">
-                <li><a href="index.html">管理系统</a></li>
-                <li class="active">分类管理</li>
-                <li class="active">房屋管理</li>
+    <!-- 如果希望有一个容器可以撑满 -- container-fluid -->
+    <div class="container-fluid">
+        <!-- 面包屑导航 ---路径导航(bootstrap) -->
+        <ol class="breadcrumb">
+            <li><a href="index.html">管理系统</a></li>
+            <li class="active">房屋管理</li>
+        </ol>
 
-            </ol>
-
-            <!-- 容器 -->
-            <div class="RS_content">
-                <button class="btn btn-default mt-bottom" id="addBtn">添加房屋详情</button>
-
-                <table class="table table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th width="10%">序号</th>
-                            <th width="15%">房屋名称</th>
-                            <th width="20%">房屋描述</th>
-                            <th width="20%">房屋地址</th>
-                            <th width="10%">房屋租金</th>
-                            <th width="25%">房屋图片</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- 坑 -->
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- 分页 -->
-            <div class="text-right">
-                <ul id="paginator">
-
-                </ul>
-            </div>
-
-        </div>
+    <!-- 容器 -->
+    <div class="RS_content">
+         <a href="addProduct.html" class="btn btn-default">添加房屋</a>
+         
+         <a href="/front/index.html" class="btn btn-success">跳转前台查看内容</a>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th width="10%">序号</th>
+                    <th width="15%">房屋名称</th>
+                    <th width="20%">房屋描述</th>
+                    <th width="20%">房屋地址</th>
+                    <th width="10%">房屋租金</th>
+                    <th width="15%">房屋图片</th>
+                    <th width="10%" id="operation">操作</th>
+                </tr>
+            </thead>
+            <tbody class="table-tbody">
+                <!-- 坑 -->
+            </tbody>
+        </table>
     </div>
 
+    <!-- 分页 -->
+    <div class="text-right">
+        <ul id="paginator">
 
-    <!-- 模态框 -->
-    <!-- fade蒙层 -->
-    <div class="modal fade" id="myModal">
-        <!-- dialog 对话框 -- 可以控制大小 -->
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <!-- button: 右上角的关闭按钮 原理:data-dismiss 隐藏-->
-                    <!-- <button type="button" class="close" data-dismiss="modal" ><span>&times;</span></button> -->
-                    <h4 class="modal-title">温馨提示</h4>
-                </div>
-                <div class="modal-body">
-                    <p><i class="glyphicon glyphicon-info-sign"></i>你确认要退出后台管理系统吗？</p>
-                </div>
-                <div class="modal-footer">
-                    <!-- data-dismiss 关闭 -->
-                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary" id="logout">退出</button>
-                </div>
-            </div>
-        </div>
+        </ul>
     </div>
 
-    <!-- 添加分类模态框 -->
-    <div class="modal fade" id="addModal">
-        <!-- dialog 对话框 -- 可以控制大小 -->
-        <div class="modal-dialog">
-            <form id="form" enctype="multipart/form-data" action='upload' method="post">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <!-- button: 右上角的关闭按钮 原理:data-dismiss 隐藏-->
-                        <!-- <button type="button" class="close" data-dismiss="modal" ><span>&times;</span></button> -->
-                        <h4 class="modal-title">添加房屋详情</h4>
-                    </div>
-                    <div class="modal-body">
-
-                        <div class="form-group">
-                            <!-- form-control是样式 -->
-                            <input type="text" name="proName" placeholder="请输入房屋名称" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <!-- 商品描述需要一个文本域 -->
-
-                            <textarea class="form-control" rows="3" name="proDesc" placeholder="请输入商品描述"></textarea>
-                        </div>
-
-                        <!-- 地址 -->
-                        <div class="form-group">
-                            <input type="text" name="address" placeholder="请输入地址" class="form-control">
-                        </div>
-                        <!-- 现价 -->
-                        <div class="form-group">
-                            <input type="text" name="rentPrice" placeholder="请输入租金" class="form-control">
-                        </div>
-                        <!-- 图片 -->
-                        <div class="form-group">
-                            <input type="file" name="pic">
-                        </div>
-
-                        <!-- 选择租赁模式 -->
-                        <div class="form-group">
-                            <div class="sex">
-                                性别选择:
-                                <label> <input type="radio" name="sex" value="male=1">男</label>
-                                <label> <input type="radio" name="sex" value="female=1">女</label>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="houseFeature">
-                                房源特色：
-                                <label> <input type="checkbox" name="feature"
-                                        value="shortRent=1">可短租</label>
-                                <label> <input type="checkbox" name="feature"
-                                       value="bathroom=1">独立卫生间</label>                  
-                            </div>
-
-                        </div>
-                        <div class="form-group">
-                            <div class="houseType">
-                                房源类型:
-                                <label><input type="checkbox" name="houseType" 
-                                    value="shareHouse">室友合租</label>
-                                <label><input type="checkbox" name="houseType" 
-                                    value="sublet">转租房源</label>
-                                <label><input type="checkbox" name="houseType" 
-                                    value="ownerRent">业主出租</label>
-                                <label><input type="checkbox" name="houseType" 
-                                    value="longtermRent">长租房源</label>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="modal-footer">
-                        <!-- data-dismiss 关闭 -->
-                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                        <!-- 注意： submit reset必须和form一起使用！ -->
-                        <button type="submit" class="btn btn-primary">添加</button>
-                    </div>
-                </div>
-            </form>
-        </div>
     </div>
+</div>
 
     <!-- 渲染 -->
-    <script type="text/html" id="addTpl">
+<script type="text/html" id="addTpl">
 {{each result v i }}
     <tr>
         <td>{{i+1+ (page-1)*size}}</td>
@@ -214,7 +99,14 @@
         <td>{{v.proDesc}}</td>
         <td>{{v.address}}</td>
         <td>{{v.rentPrice}}</td>
-        <td><img src='{{v.picAddr}}' alt=""></td>
+        <td><img src="{{v.picAddr}}" id="img" alt=""></td> 
+        <td>
+            <a href="editProduct.html?id={{v._id}}">
+              <button class="my-btn-primary">修改</button>  
+            </a>
+
+            <button class="my-btn-danger" id="del-btn" data-id="{{v._id}}">删除</button>
+        </td>
     </tr>
  {{/each}}   
 </script>
@@ -224,14 +116,10 @@
 
 </html>
 
-
 <script src="./lib/jquery-1.12.4.min.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
-<!-- jqeury.ui.widget 扩展 -->
-<!-- <script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script> -->
-<!-- <script src="./lib/jquery-fileupload/jquery.fileupload.js"></script> -->
 <script src="./lib/nprogress/nprogress.js"></script>
 <script src="./lib/template-web.js"></script>
 <script src="./js/common.js"></script>

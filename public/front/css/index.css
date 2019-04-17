@@ -1,53 +1,13 @@
 
-.mt_10{
-    margin-top: 10px;
-}
-.container {
-    min-width: 320px;
-    max-width: 640px;
-    height: 100%;
-    width: 100%;
-    background-color: #fff;
-    position: relative;
-    padding-top: 30px;
-    padding-bottom: 50px;
-}
 
-.myzuber_head {
-    height: 30px;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-}
-.myzuber_head ul {
-    height: 100%;
-    width: 100%;
-}
-.myzuber_head ul li a{
 
-    display: block;
-    float: left;
-    width: 25%;
-    text-align: center;
-    line-height: 30px;
-    height: 30px;
-    font-size: 14px;
-}
+
 .myzuber_content {
     position: relative;
     height: 100%;
     width: 100%;
 }
-.myzuber_foot {
-    height: 50px;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-}
+
 .myzuber_foot ul{
     border-top: 1px grey solid;
 }
@@ -65,6 +25,11 @@
   color: green;
 }
 
+.mui-table-view .mui-media-object.mui-pull-left{
+    width: 80px;
+    height: 80px;
+    max-width: 100px;
+}
 /* 房屋详情展示 */
 .houseDetails  {
    height: 120px;
@@ -104,10 +69,9 @@
     height: 600px;
 
 }
-
 .hiddenArea .wrap-content {
     background-color: #fff;
-    height: 400px;
+    height: 315px;
     padding: 10px;
 
 }
@@ -115,6 +79,7 @@
     border: 1px solid #ccc;
     color: #999;
     border-radius: 3px;
+    line-height: 20px;
 }
 /* 性别筛选 */
 .hiddenArea .sex {
@@ -135,7 +100,9 @@
 }
 /* 确认按钮样式 */
 .type_btns {
-    margin-top: 30px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
 }
 .type_btns div{
     float: left;
@@ -159,7 +126,73 @@
 .button-active {
   border: 1px solid #66d4c3;
   background-color: #f0fffd;
-  color: black;
+  color: #66d4c3;
   border-radius: 3px;
  
+}
+
+
+/* 隐藏区域2 */
+.hiddenAreaa{
+    z-index: 10;
+    background-color:rgba(0,0,0,.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.hiddenAreaa .wrap-content {
+    background-color: #fff;
+    padding: 10px;
+    position: relative;
+}
+.hiddenAreaa .roomNumber {
+    font-size: 12px;
+    margin-top: 10px;
+    width: 100%;
+}
+.hiddenAreaa .roomNumber .content{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.hiddenAreaa .roomNumber .content span{
+    width: 22%;
+    box-sizing: border-box;
+    line-height: 20px;
+}
+.hiddenAreaa .roomShare {
+    font-size: 12px;
+    margin-top: 10px;                                 
+}
+.hiddenAreaa .roomShare .content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.hiddenAreaa .roomShare .content span {
+    width: 22%;
+    line-height: 20px;
+    box-sizing: border-box;
+    margin-left: 6px;
+}
+.hiddenAreaa .roomShare .content span:nth-child(3){
+    visibility: hidden;
+}
+.hiddenAreaa .roomShare .content span:nth-child(4){
+    visibility: hidden;
+}
+.noLimit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    line-height: 22px;
+    font-size: 14px;
+    color: #66d4c3;
 }

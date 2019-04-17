@@ -15,104 +15,153 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="myzuber_head">
-            <ul>
-                <li>
-                    <a href="search.html">
-                        <span id="location">位置搜索</span>
-                        <i class="fa fa-search"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span>户型</span>
-                        <i></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;" id="showArea">
-                        <span>筛选</span>
-                        <i></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span>有无视频</span>
-                        <i></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="myzuber_content">
-            <div class="hiddenArea" style="display:none">
-                <div class="wrap-content">
+<!-- 全屏布局容器 -->
+<div class="container">
+<!-- 顶部区域 --> 
+<div class="myzuber_head">
+    <div class="top">
+        <div class="whereNow"> <i class=""></i>东京</div> 
+        <div class="search-title">东京白领租房</div>    
+        <div class=""></div> 
+    </div>
+    <!-- 顶部-导航区域 -->
+    <div class="myzuber_topbar">
+        <ul>
+            <li>
+                <a href="search.html">
+                    <span id="location">位置搜索</span>
+                    <i class="fa fa-search"></i>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;" id="showArea1">
+                    <span>户型</span>
+                    <i class="fa fa-caret-down"></i>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;" id="showArea">
+                    <span>筛选</span>
+                    <i class="fa fa-caret-down"></i>
+                </a>
+            </li>
+            <li>
+                <a href="/back/product.html">
+                    <span>跳转后台</span>
+                    <i></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+
+</div>
+<!-- 主体区域 -->
+<div class="myzuber_content">
+    <div class="hiddenArea" style="display:none">
+        <div class="wrap-content">
+            <div>
+                <!-- 性别筛选 -->
+                <div class="sex">性别限制
                     <div>
-                        <!-- 性别筛选 -->
-                        <div class="sex">性别限制</div>
-                        <span class="button-active" data-value="male">允许男性</span>
-                        <span data-value="female">允许女性</span>
-                        <!-- 房源特色 -->
-                        <div class="feature">房源特色</div>
-                        
-                      
-                            <span class="button-active" data-value="shortRent">允许短租</span>
-                            <span data-value="bashroom">独立卫生间</span>
-                        <!-- 房源类型 -->
-                        <div class="houseType">房源类型</div>
-                            
-                            <span data-value="shareHouse">合租房屋</span>
-                            <span data-value="sublet">转租房屋</span>
-                            <span data-value="ownerRent">业主出租</span>
-                            <span data-value="longtermRent">长租房源</span>
-                      
+                        <span class="button-active mui-btn" data-name="sex" data-value="0">允许男性</span>
+                        <span data-name="sex" data-value="1" class="mui-btn">允许女性</span>
+                        <span data-name="sex" data-value="2" class="mui-btn">不限</span>   
                     </div>
-                    <div class="btn">
-                        <div class="type_btns">
-                            <div class="clear_btn">清除</div>
-                            <div class="enter_btn">确定</div>
-                        </div>
-                    </div>
-
+    
                 </div>
-
-
+    
+                <!-- 房源特色 -->
+                <div class="feature">房源特色</div>
+    
+                <span class="button-active mui-btn" data-value="1" data-name="shortRent">允许短租</span>
+                <span data-name="bashroom" data-value="1" class="mui-btn">独立卫生间</span>
+                <!-- 房源类型 -->
+                <div class="houseType">房源类型</div>
+    
+                <span data-name="shareHouse" data-value="1" class="mui-btn">合租房屋</span>
+                <span data-name="sublet" data-value="1" class="mui-btn">转租房屋</span>
+                <span data-name="ownerRent" data-value="1" class="mui-btn">业主出租</span>
+                <span data-name="longRent" data-value="1" class="mui-btn">长租房源</span>
+    
+        </div>
+            <div class="btn">
+                <div class="type_btns mui-clearfix">
+                    <div class="clear_btn">清除</div>
+                    <div class="enter_btn">确定</div>
+                </div>
             </div>
-            <div class="mui-scroll-wrapper">
-                <div class="mui-scroll">
-                    <ul class="mui-table-view">
-                        <!-- 坑 -->
-                        <!-- modal -->
-
-                    </ul>
-
-                </div>
+    
+        </div>
+    
+    
+    </div>
+    <div class="hiddenAreaa" style="display:none">
+    
+        <div class="wrap-content">
+        <div class="roomNumber">
+            整租<br>
+            <div class="content mui-clearfix">
+            <span class="mui-btn" data-name="bedroom" data-value="1">1室</span> 
+            <span class="mui-btn" data-name="bedroom" data-value="2">2室</span> 
+            <span class="mui-btn" data-name="bedroom" data-value="3">3室</span> 
+            <span class="mui-btn" data-name="bedroom" data-value="4+">4室+</span> 
+            </div>    
+        </div>
+    
+        <div class="roomShare">
+        合租<br>
+            <div class="content">
+                <span class="mui-btn">独立房间</span>
+                <span class="mui-btn">床位</span>
+                <span></span>
+                <span></span>
             </div>
 
         </div>
-        <div class="myzuber_foot">
-            <ul>
-                <li>
-                    <a href="index.html" class="current">
-                        <i class="fa fa-home"></i>
-                        <p>首页</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="message.html">
-                        <i class="fa fa-envelope-o"></i>
-                        <p>消息</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="index.html">
-                        <i class="fa fa-user"></i>
-                        <p>我</p>
-                    </a>
-                </li>
-            </ul>
+        <div class="noLimit">
+            不限
         </div>
     </div>
+    </div>
+    <!-- 渲染数据区域 -->
+    <div class="mui-scroll-wrapper">
+    <div class="mui-scroll">
+        <ul class="mui-table-view">
+            <!-- 坑 -->
+            <!-- modal -->
+        </ul>
+    
+    </div>
+    </div>    
+</div>
+
+<!-- 底部区域 -->
+<div class="myzuber_foot">
+<ul>
+    <li>
+        <a href="index.html" class="current">
+            <i class="fa fa-home"></i>
+            <p>首页</p>
+        </a>
+    </li>
+    <li>
+        <a href="message.html">
+            <i class="fa fa-envelope-o"></i>
+            <p>消息</p>
+        </a>
+    </li>
+    <li>
+        <a href="index.html">
+            <i class="fa fa-user"></i>
+            <p>我</p>
+        </a>
+    </li>
+</ul>
+</div>
+</div>
+
 
 
 
@@ -123,14 +172,13 @@
 
 <li class="mui-table-view-cell mui-media" data-id = "{{v._id}}">
     <a href="productDetails.html?id={{v._id}}">
-        <img class="mui-media-object mui-pull-left" src="./images/mmexport1535437448344.jpg">
+        <img class="mui-media-object mui-pull-left" src="{{v.picAddr}}">
         <div class="mui-media-body">
             <p> {{v.proName}}</p>
             <p class="mui-ellipsis">{{v.address}}</p>
-            <span>{{v.rentPrice}}</span>
+            <span>{{v.rentPrice}}月</span>
         </div>
     </a>
-    
 </li>
 {{/each}}
 </script>
@@ -138,9 +186,10 @@
 
 <script src="./lib/mui/js/mui.min.js"></script>
 <script src="./lib/zepto/zepto.min.js"></script>
-<script src="./lib/jquery-1.12.4.min.js"></script>
-<script src="./lib/artTemplate/template-web.js"></script>
 <script src="./js/common.js"></script>
 <script src="./js/index.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+
+
 
 </html>

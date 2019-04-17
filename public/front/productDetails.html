@@ -1,50 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/productDetails.css">
+    <link rel="stylesheet" href="./lib/fa/css/font-awesome.min.css">
+
 </head>
+
 <body>
     <div class="container">
-        <!-- 轮播 -->
-        <div class="lunbo">
-            <img src="./images/mmexport1535437448344.jpg" alt="">
-        </div>
+      <div class="content">
+          <!-- 坑 -->  
+      </div>
         
-        <!-- 内容 -->
-        <div class="content">
-         <!-- 坑 -->
-        </div>
-
+    
     </div>
 </body>
 
 <script type="text/html" id="tpl">
-
-<!-- 房源描述 -->
-<div class="proDesc">
-    <p>整套-1室1厅1卫</p>
-    <p class="rentPrice">{{rentPrice}}/月</p>
-    </div>
-    <div class="address">
-        <p>{{address}}</p>
-    </div>
-    <!-- 具体描述 -->
-    <div class="details">
-        <p>房间位于池袋商业街最繁华的地带，交通方便，周围吃的也很多
-            我的联系方式：1771463434
-        </p>
+   
+<!-- 轮播 -->
+<div class="lunbo">
+    <img src="{{picAddr}}" alt="">
 </div>
 
+<!-- 内容 -->
+<div class="content">
+    <div class="proDesc">
+        <p>整套-{{bedroom}}室{{livingRoom}}厅{{totalBathroom}}卫</p>
+        <span class="rentPrice">{{rentPrice}}/月</span> 
+        <span class="movein">随时入住</span> 
+        <div class="houseType">
+            
+        </div>
+        </div>
+        <div class="address">
+            <i class="fa fa-car"></i>
+            <span>{{address}}</span>
+            <span class="toMap">地图></span>
+        </div>
+        <!-- 具体描述 -->
+        <h4>房源描述:</h4>
+        <div class="details">    
+            <div class="wrap">          
+                <img src="../images/cc.jpg" alt=""> 
+                <div class="userDetails">
+                    <div>大花化</div>
+                    <span>暂无职业</span>    
+                </div>   
+                <div class="connection">联系ta</div> 
+            </div>
+            
+            <p>{{proDesc}}</p>
+    </div>
+</div>
 
-</script>
+ </script>
 
 <script src="./lib/artTemplate/template-web.js"></script>
 <script src="./lib/zepto/zepto.min.js"></script>
 <script src="./lib/mui/js/mui.min.js"></script>
 <script src="./js/productDetails.js"></script>
-</html>
+
+</html> -->

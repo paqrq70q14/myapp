@@ -11,3 +11,57 @@ html,body {
     width: 100%;
     height: 100%;
 }
+.container {
+    height: 100%;
+    width: 100%;
+    max-width: 640px; 
+    min-width: 320px;
+    margin: 0 auto;
+    position: relative;
+    background-color: #fff;
+    padding-top: 75px;
+    padding-bottom: 50px;
+
+}
+/* 头部区域 */
+.myzuber_head {
+    /* 定位要相对于有定位的父元素 -- container : relative */
+    position: absolute;
+    width: 100%;
+    height: 75px;
+    top: 0;
+    left: 0;
+}
+.myzuber_head .top {
+    padding: 15px 16px;
+    height: 20px;
+    width: 100%;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between
+}
+.myzuber_topbar ul {
+    height: 50px;
+    font-size: 14px;
+    padding-top: 15px;
+    border-bottom: 1px solid #eee;
+}
+.myzuber_head ul li a{
+    display: block;
+    float: left;
+    width: 25%;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    font-size: 12px;
+}
+.myzuber_foot {
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    background-color:pink;
+}
+

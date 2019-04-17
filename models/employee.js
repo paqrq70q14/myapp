@@ -1,4 +1,4 @@
-var db = require('../mongo/dbb');
+let db = require('../mongo/dbb');
 
 function Employee(employee){
     this.id = employee.id;
@@ -11,27 +11,18 @@ function Employee(employee){
 Employee.getUserByName = function (username, callback){
 
     db.queryUser(username, function(err, result){
-        console.log(username); //ls
-
+        
       if (!result){
          return callback(err);
       }
      
-      var queryResult = result;
+      let queryResult = result;
        console.log(queryResult);
-      return callback(queryResult);
+       return callback(queryResult);
     })
 }
 
 
-// Employee.getUserByName("ls", function (result){
-//     if(!result) {
-//         console.log("no");
-//     }
-//     console.log(result.age);
-  
-    
-// })
 
 
 module.exports = Employee;
